@@ -1,11 +1,10 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.myapplication.Core.BaseActivity;
 import com.example.myapplication.databinding.ActivityLoginBinding;
 
 public class LoginActivity extends BaseActivity {

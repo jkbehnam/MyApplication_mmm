@@ -7,10 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.Models.MainMenuModel;
-import com.example.myapplication.databinding.MainListItemBinding;
+import com.example.myapplication.databinding.ItemListMainBinding;
 
 
 import java.util.List;
@@ -28,7 +29,7 @@ public class MainMenuAdapter extends RecyclerView.Adapter<MainMenuAdapter.MyView
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        MainListItemBinding binding = MainListItemBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
+        ItemListMainBinding binding = ItemListMainBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
         context = parent.getContext();
 
         return new MyViewHolder(binding);
@@ -52,9 +53,9 @@ public class MainMenuAdapter extends RecyclerView.Adapter<MainMenuAdapter.MyView
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        private final MainListItemBinding binding;
+        private final ItemListMainBinding binding;
 
-        public MyViewHolder(MainListItemBinding binding) {
+        public MyViewHolder(ItemListMainBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }
@@ -63,6 +64,8 @@ public class MainMenuAdapter extends RecyclerView.Adapter<MainMenuAdapter.MyView
             binding.itemMainTvTitle.setText(data.title);
             binding.itemMainTvSubtitle.setText(data.subTitle);
             binding.itemMainImg.setImageResource(data.img);
+            binding.itemMainImg.setColorFilter(ContextCompat.getColor(context, data.imgColor), android.graphics.PorterDuff.Mode.SRC_IN);
+
         }
     }
 

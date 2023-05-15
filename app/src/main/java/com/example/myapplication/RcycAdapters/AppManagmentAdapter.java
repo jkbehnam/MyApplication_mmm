@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.Models.AppDetailModel;
 import com.example.myapplication.Models.MainMenuModel;
-import com.example.myapplication.databinding.AppListItemBinding;
-import com.example.myapplication.databinding.MainListItemBinding;
+import com.example.myapplication.databinding.ItemListAppBinding;
+
 
 import java.util.List;
 
@@ -29,7 +29,7 @@ public class AppManagmentAdapter extends RecyclerView.Adapter<AppManagmentAdapte
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        AppListItemBinding binding = AppListItemBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
+        ItemListAppBinding binding = ItemListAppBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
         context = parent.getContext();
 
         return new MyViewHolder(binding);
@@ -38,7 +38,12 @@ public class AppManagmentAdapter extends RecyclerView.Adapter<AppManagmentAdapte
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         AppDetailModel data = dataList.get(position);
-
+        holder.binding.appItemLl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onItemClickListener.onItemClick(data, position);
+            }
+        });
         holder.bind(data);
     }
 
@@ -48,9 +53,9 @@ public class AppManagmentAdapter extends RecyclerView.Adapter<AppManagmentAdapte
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        private final AppListItemBinding binding;
+        private final ItemListAppBinding binding;
 
-        public MyViewHolder(AppListItemBinding binding) {
+        public MyViewHolder(ItemListAppBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }

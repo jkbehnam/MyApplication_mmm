@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -25,19 +26,21 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentMainBinding.inflate(inflater, container, false);
 
-        NavController navController = Navigation.findNavController(container);
+            ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
 
+        NavController navController = Navigation.findNavController(container);
         List<MainMenuModel> mainAdapterItems=new ArrayList<>();
-        mainAdapterItems.add(new MainMenuModel("مدیریت کاربران","افزودن کاربر جدید دیدن کاربرهای قدیمی",R.drawable.ic_group));
-        mainAdapterItems.add(new MainMenuModel("مدیریت نرم افزار ها","افزودن نرم افزار جدید",R.drawable.ic_key));
-        mainAdapterItems.add(new MainMenuModel("آمار","",R.drawable.ic_person));
-        mainAdapterItems.add(new MainMenuModel("تست","",R.drawable.ic_group));
+        mainAdapterItems.add(new MainMenuModel("مشتریان","افزودن کاربر جدید دیدن کاربرهای قدیمی",R.drawable.ic_group,R.color.red_light));
+        mainAdapterItems.add(new MainMenuModel("نرم افزارها","افزودن نرم افزار جدید",R.drawable.ic_rasis_logo,R.color.lightButton));
+        mainAdapterItems.add(new MainMenuModel("پلن ها","",R.drawable.ic_list,R.color.green_light));
+        mainAdapterItems.add(new MainMenuModel("'گزارش ها'","",R.drawable.ic_bar_chart,R.color.purple_light));
 
         MainMenuAdapter mainMenuAdapter=new MainMenuAdapter(mainAdapterItems, new MainMenuAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(MainMenuModel item, int position) {
                 switch (position){
                     case 0:
+                        navController.navigate(R.id.action_mainFragment_to_customerManagerFragment);
                         break;
                     case 1:
                         navController.navigate(R.id.action_mainFragment_to_appManagerFragment);

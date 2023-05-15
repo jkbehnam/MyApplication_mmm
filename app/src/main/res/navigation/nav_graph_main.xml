@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_mainFragment_to_appManagerFragment"
             app:destination="@id/appManagerFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_customerManagerFragment"
+            app:destination="@id/customerManagerFragment" />
     </fragment>
     <fragment
         android:id="@+id/appManagerFragment"
@@ -27,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/addAppFragment"
-        android:name="com.example.myapplication.AddAppFragment"
+        android:name="com.example.myapplication.AppAddFragment"
         android:label="fragment_add_app"
         tools:layout="@layout/fragment_add_app" />
     <fragment
@@ -35,4 +38,8 @@
         android:name="com.example.myapplication.AppDetailFragment"
         android:label="fragment_app_detail"
         tools:layout="@layout/fragment_app_detail" />
+    <fragment
+        android:id="@+id/customerManagerFragment"
+        android:name="com.example.myapplication.CustomerManagerFragment"
+        android:label="CustomerManagerFragment" />
 </navigation>
