@@ -24,15 +24,22 @@
             >
 
             <com.example.myapplication.CutomViews.CustomInputForm_tv_et
-                android:id="@+id/add_app_if_name"
+                android:id="@+id/add_customer_if_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"></com.example.myapplication.CutomViews.CustomInputForm_tv_et>
 
             <com.example.myapplication.CutomViews.CustomInputForm_tv_et
-                android:id="@+id/add_app_if_description"
+                android:id="@+id/add_customer_if_mobile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"></com.example.myapplication.CutomViews.CustomInputForm_tv_et>
-
+            <com.example.myapplication.CutomViews.CustomInputForm_tv_et
+                android:id="@+id/add_customer_if_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></com.example.myapplication.CutomViews.CustomInputForm_tv_et>
+            <com.example.myapplication.CutomViews.CustomInputForm_tv_et
+                android:id="@+id/add_customer_if_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></com.example.myapplication.CutomViews.CustomInputForm_tv_et>
         </LinearLayout>
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_add"

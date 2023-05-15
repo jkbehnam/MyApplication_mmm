@@ -39,7 +39,7 @@ public class CustomerManagerFragment extends Fragment {
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
 
         List<CustomerModel> customerModels = new ArrayList<>();
-        customerModels.add(new CustomerModel("محمد احمدی مقدم مقدم", "09133432650" ));
+        customerModels.add(new CustomerModel("محمد امین احمدی مقدم مقدم", "09133432650" ));
         customerModels.add(new CustomerModel("محمد احمدی مقدم", "09133432650" ));
         customerModels.add(new CustomerModel("محمد احمدی مقدم", "09133432650" ));
         customerModels.add(new CustomerModel("محمد احمدی مقدم", "09133432650" ));
@@ -52,9 +52,20 @@ public class CustomerManagerFragment extends Fragment {
         customerModels.add(new CustomerModel("محمد احمدی مقدم", "09133432650" ));
 
 
-        CustomerManagmentAdapter appManagmentAdapter = new CustomerManagmentAdapter(customerModels,(item, position) -> {});
+        CustomerManagmentAdapter appManagmentAdapter = new CustomerManagmentAdapter(customerModels,(item, position) -> {
+            Navigation.findNavController(getView()).navigate(R.id.action_customerManagerFragment_to_customerDetailFragment);
+
+        });
         binding.rclAppmanager.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         binding.rclAppmanager.setAdapter(appManagmentAdapter);
+
+        binding.fabAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(getView()).navigate(R.id.action_customerManagerFragment_to_customerAddFragment);
+
+            }
+        });
 
         return binding.getRoot();
     }

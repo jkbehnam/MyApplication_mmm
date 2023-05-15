@@ -41,5 +41,29 @@
     <fragment
         android:id="@+id/customerManagerFragment"
         android:name="com.example.myapplication.CustomerManagerFragment"
-        android:label="CustomerManagerFragment" />
+        android:label="CustomerManagerFragment" >
+        <action
+            android:id="@+id/action_customerManagerFragment_to_customerAddFragment"
+            app:destination="@id/customerAddFragment" />
+        <action
+            android:id="@+id/action_customerManagerFragment_to_customerDetailFragment"
+            app:destination="@id/customerDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/customerAddFragment"
+        android:name="com.example.myapplication.CustomerAddFragment"
+        android:label="CustomerAddFragment" />
+    <fragment
+        android:id="@+id/customerDetailFragment"
+        android:name="com.example.myapplication.CustomerDetailFragment"
+        android:label="CustomerDetailFragment" >
+        <action
+            android:id="@+id/action_customerDetailFragment_to_subscriptionAddFragment"
+            app:destination="@id/subscriptionAddFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/subscriptionAddFragment"
+        android:name="com.example.myapplication.SubscriptionAddFragment"
+        android:label="fragment_subscription_add"
+        tools:layout="@layout/fragment_subscription_add" />
 </navigation>

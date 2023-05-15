@@ -4,7 +4,6 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -12,27 +11,27 @@ import androidx.annotation.Nullable;
 
 import com.example.myapplication.R;
 
-public class CustomInputForm extends LinearLayout {
+public class CustomInputForm_tv_et extends LinearLayout {
 
     private TextView textView;
     private EditText editText;
 
-    public CustomInputForm(Context context) {
+    public CustomInputForm_tv_et(Context context) {
         super(context);
         init(context);
     }
 
-    public CustomInputForm(Context context, @Nullable AttributeSet attrs) {
+    public CustomInputForm_tv_et(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init(context);
     }
 
-    public CustomInputForm(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public CustomInputForm_tv_et(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context);
     }
 
-    public CustomInputForm(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public CustomInputForm_tv_et(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         init(context);
     }

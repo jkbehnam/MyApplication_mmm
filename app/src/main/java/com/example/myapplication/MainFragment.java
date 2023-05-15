@@ -28,7 +28,7 @@ public class MainFragment extends Fragment {
 
             ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
 
-        NavController navController = Navigation.findNavController(container);
+
         List<MainMenuModel> mainAdapterItems=new ArrayList<>();
         mainAdapterItems.add(new MainMenuModel("مشتریان","افزودن کاربر جدید دیدن کاربرهای قدیمی",R.drawable.ic_group,R.color.red_light));
         mainAdapterItems.add(new MainMenuModel("نرم افزارها","افزودن نرم افزار جدید",R.drawable.ic_rasis_logo,R.color.lightButton));
@@ -40,10 +40,10 @@ public class MainFragment extends Fragment {
             public void onItemClick(MainMenuModel item, int position) {
                 switch (position){
                     case 0:
-                        navController.navigate(R.id.action_mainFragment_to_customerManagerFragment);
+                        Navigation.findNavController(getView()).navigate(R.id.action_mainFragment_to_customerManagerFragment);
                         break;
                     case 1:
-                        navController.navigate(R.id.action_mainFragment_to_appManagerFragment);
+                        Navigation.findNavController(getView()).navigate(R.id.action_mainFragment_to_appManagerFragment);
                         break;
                     case 2:
                         break;

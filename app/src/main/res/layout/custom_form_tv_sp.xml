@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="15dp"
+
+    android:layout_marginTop="15dp"
+    android:layout_marginRight="15dp"
+    android:gravity="right"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/custom_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="TextView" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_et_add"
+
+        >
+
+        <Spinner
+            android:id="@+id/custom_sp"
+            style="@style/Widget.AppCompat.DropDownItem.Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layoutDirection="rtl"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textAlignment="viewStart"
+            android:textDirection="rtl" />
+    </RelativeLayout>
+
+
+</LinearLayout>

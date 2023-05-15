@@ -61,8 +61,7 @@ public class AppManagerFragment extends Fragment {
         AppManagmentAdapter appManagmentAdapter = new AppManagmentAdapter(appDetailModels, new AppManagmentAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(AppDetailModel item, int position) {
-                NavController navController = Navigation.findNavController(container);
-                navController.navigate(R.id.action_appManagerFragment_to_appDetailFragment);
+                Navigation.findNavController(getView()).navigate(R.id.action_appManagerFragment_to_appDetailFragment);
             }
         });
         binding.rclAppmanager.setLayoutManager(new LinearLayoutManager(this.getActivity()));
@@ -71,8 +70,7 @@ public class AppManagerFragment extends Fragment {
         binding.fabAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavController navController = Navigation.findNavController(container);
-                navController.navigate(R.id.action_appManagerFragment_to_addAppFragment);
+                Navigation.findNavController(getView()).navigate(R.id.action_appManagerFragment_to_addAppFragment);
 
             }
         });
