@@ -13,8 +13,8 @@ import com.example.myapplication.R;
 
 public class CustomInputForm_tv_et extends LinearLayout {
 
-    private TextView textView;
-    private EditText editText;
+    public TextView textView;
+    public EditText editText;
 
     public CustomInputForm_tv_et(Context context) {
         super(context);

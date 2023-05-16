@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".AppAddFragment"
-    android:id="@+id/frameLayout2">
+    tools:context=".AppAddFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <include
@@ -20,15 +20,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
-          <com.example.myapplication.CutomViews.CustomInputForm_tv_sp
-              android:id="@+id/sub_add_if_app"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content">
+            <com.example.myapplication.CutomViews.CustomInputForm_tv_sp
+                android:id="@+id/sub_add_if_app"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-          </com.example.myapplication.CutomViews.CustomInputForm_tv_sp>
+            </com.example.myapplication.CutomViews.CustomInputForm_tv_sp>
+
             <com.example.myapplication.CutomViews.CustomInputForm_tv_sp
                 android:id="@+id/sub_add_if_plan"
 
@@ -36,7 +36,23 @@
                 android:layout_height="wrap_content">
 
             </com.example.myapplication.CutomViews.CustomInputForm_tv_sp>
+
+            <com.example.myapplication.CutomViews.CustomInputForm_tv_et
+                android:id="@+id/sub_add_if_start_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></com.example.myapplication.CutomViews.CustomInputForm_tv_et>
+            <com.example.myapplication.CutomViews.CustomInputForm_tv_et
+                android:id="@+id/sub_add_if_end_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></com.example.myapplication.CutomViews.CustomInputForm_tv_et>
+
+            <com.example.myapplication.CutomViews.CustomInputForm_tv_et
+                android:id="@+id/sub_add_if_max_version"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></com.example.myapplication.CutomViews.CustomInputForm_tv_et>
+
         </LinearLayout>
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_add"
             android:layout_width="wrap_content"
