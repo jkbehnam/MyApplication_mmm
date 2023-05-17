@@ -47,9 +47,13 @@ dependencies {
     def nav_version = "2.5.3"
     implementation "androidx.navigation:navigation-fragment:$nav_version"
     implementation "androidx.navigation:navigation-ui:$nav_version"
-
+    //persian data
     implementation 'com.github.aliab:Persian-Date-Picker-Dialog:1.8.0'
-
+//retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.6.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+//beautifull toasts
+    implementation 'com.github.GrenderG:Toasty:1.5.2'
 
 
 }

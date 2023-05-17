@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Pages;
 
 import android.os.Bundle;
 
@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.myapplication.Models.MainMenuModel;
+import com.example.myapplication.R;
 import com.example.myapplication.RcycAdapters.MainMenuAdapter;
 import com.example.myapplication.databinding.FragmentMainBinding;
 
@@ -30,9 +31,9 @@ public class MainFragment extends Fragment {
 
 
         List<MainMenuModel> mainAdapterItems=new ArrayList<>();
-        mainAdapterItems.add(new MainMenuModel("مشتریان","افزودن کاربر جدید دیدن کاربرهای قدیمی",R.drawable.ic_group,R.color.red_light));
-        mainAdapterItems.add(new MainMenuModel("نرم افزارها","افزودن نرم افزار جدید",R.drawable.ic_rasis_logo,R.color.lightButton));
-        mainAdapterItems.add(new MainMenuModel("پلن ها","",R.drawable.ic_list,R.color.green_light));
+        mainAdapterItems.add(new MainMenuModel("مشتریان","مدریت کاربران و افزودن اشتراک", R.drawable.ic_group,R.color.red_light));
+        mainAdapterItems.add(new MainMenuModel("نرم افزارها","مدیریت نرم افزار های رسیس",R.drawable.ic_rasis_logo,R.color.lightButton));
+        mainAdapterItems.add(new MainMenuModel("پلن ها","مدیریت پلن ",R.drawable.ic_list,R.color.green_light));
         mainAdapterItems.add(new MainMenuModel("'گزارش ها'","",R.drawable.ic_bar_chart,R.color.purple_light));
 
         MainMenuAdapter mainMenuAdapter=new MainMenuAdapter(mainAdapterItems, new MainMenuAdapter.OnItemClickListener() {
@@ -46,6 +47,8 @@ public class MainFragment extends Fragment {
                         Navigation.findNavController(getView()).navigate(R.id.action_mainFragment_to_appManagerFragment);
                         break;
                     case 2:
+                        Navigation.findNavController(getView()).navigate(R.id.action_mainFragment_to_planManagerFragment);
+
                         break;
                 }
             }

@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Pages;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myapplication.R;
 import com.example.myapplication.databinding.FragmentAddAppBinding;
 import com.example.myapplication.databinding.FragmentSubscriptionAddBinding;
 
@@ -36,7 +37,7 @@ public class SubscriptionAddFragment extends Fragment {
         binding = FragmentSubscriptionAddBinding.inflate(inflater, container, false);
 
         toolbarTitle = binding.toolbar.textView3;
-        toolbarTitle.setText("افزودن محصول");
+        toolbarTitle.setText("اشتراک جدید");
         toolbar = binding.toolbar.tlbMain;
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
 

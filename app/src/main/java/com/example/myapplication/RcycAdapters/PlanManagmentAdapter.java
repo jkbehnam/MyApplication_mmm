@@ -9,18 +9,19 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myapplication.Models.AppDetailModel;
-import com.example.myapplication.databinding.ItemListAppBinding;
-
+import com.example.myapplication.Models.CustomerModel;
+import com.example.myapplication.Models.PlanModel;
+import com.example.myapplication.databinding.ItemListCustomerBinding;
+import com.example.myapplication.databinding.ItemListPlanBinding;
 
 import java.util.List;
 
-public class AppManagmentAdapter extends RecyclerView.Adapter<AppManagmentAdapter.MyViewHolder> {
-    private final List<AppDetailModel> dataList;
+public class PlanManagmentAdapter extends RecyclerView.Adapter<PlanManagmentAdapter.MyViewHolder> {
+    private final List<PlanModel> dataList;
     OnItemClickListener onItemClickListener;
     Context context;
 
-    public AppManagmentAdapter(List<AppDetailModel> dataList, OnItemClickListener onItemClickListener) {
+    public PlanManagmentAdapter(List<PlanModel> dataList, OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
         this.dataList = dataList;
     }
@@ -28,7 +29,7 @@ public class AppManagmentAdapter extends RecyclerView.Adapter<AppManagmentAdapte
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemListAppBinding binding = ItemListAppBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
+        ItemListPlanBinding binding = ItemListPlanBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
         context = parent.getContext();
 
         return new MyViewHolder(binding);
@@ -36,7 +37,7 @@ public class AppManagmentAdapter extends RecyclerView.Adapter<AppManagmentAdapte
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        AppDetailModel data = dataList.get(position);
+        PlanModel data = dataList.get(position);
         holder.binding.appItemLl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,23 +53,24 @@ public class AppManagmentAdapter extends RecyclerView.Adapter<AppManagmentAdapte
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        private final ItemListAppBinding binding;
+        private final ItemListPlanBinding binding;
 
-        public MyViewHolder(ItemListAppBinding binding) {
+        public MyViewHolder(ItemListPlanBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }
 
-        public void bind(AppDetailModel data) {
-            binding.tvAppName.setText(data.Name);
-            binding.tvAppVersion.setText(data.Version);
-            binding.tvAppReleaseDate.setText(data.releaseData);
+        public void bind(PlanModel data) {
+         //   binding.tvPlanName.setText(data.Name);
+            binding.tvPlanName.setText(data.Name);
+            binding.tvPlanDay.setText(String.valueOf(data.Days));
+
 
         }
     }
 
     public interface OnItemClickListener {
-        void onItemClick(AppDetailModel item, int position);
+        void onItemClick(PlanModel item, int position);
     }
 }
 

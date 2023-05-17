@@ -1,8 +1,9 @@
-package com.example.myapplication;
+package com.example.myapplication.Pages;
 
 import android.os.Bundle;
 
 import com.example.myapplication.Core.BaseActivity;
+import com.example.myapplication.R;
 
 public class NavHostActivity extends BaseActivity {
 

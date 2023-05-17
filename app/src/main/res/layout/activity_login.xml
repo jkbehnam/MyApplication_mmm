@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="@color/white"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".Pages.LoginActivity">
 
 
     <LinearLayout
@@ -39,13 +39,12 @@
 
             <!-- INPUT -->
             <EditText
-                android:id="@+id/username_input"
+                android:id="@+id/login_et_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/username_icon"
                 android:background="@android:color/transparent"
                 android:hint="Username"
-                android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:paddingLeft="17dp"
                 android:paddingTop="15dp"
@@ -81,7 +80,7 @@
                 android:src="@drawable/ic_key" />
             <!-- INPUT -->
             <EditText
-                android:id="@+id/pass"
+                android:id="@+id/login_et_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/icon"

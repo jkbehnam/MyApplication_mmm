@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Pages;
 
 import android.os.Bundle;
 
@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.example.myapplication.Models.AppDetailModel;
 import com.example.myapplication.Models.CustomerModel;
+import com.example.myapplication.R;
 import com.example.myapplication.RcycAdapters.AppManagmentAdapter;
 import com.example.myapplication.RcycAdapters.CustomerManagmentAdapter;
 import com.example.myapplication.databinding.FragmentAppManagerBinding;

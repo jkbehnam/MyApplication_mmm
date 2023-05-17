@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Pages;
 
 import android.os.Bundle;
 
@@ -10,25 +10,30 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.myapplication.databinding.FragmentAddAppBinding;
-import com.example.myapplication.databinding.FragmentAppDetailBinding;
+import com.example.myapplication.R;
+import com.example.myapplication.databinding.FragmentPlanAddBinding;
 
 
-public class AppDetailFragment extends Fragment {
-    FragmentAppDetailBinding binding;
+public class PlanAddFragment extends Fragment {
+
     private TextView toolbarTitle;
     private Toolbar toolbar;
+    FragmentPlanAddBinding binding;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentAppDetailBinding.inflate(inflater, container, false);
+        binding=FragmentPlanAddBinding.inflate(inflater,container,false);
 
         toolbarTitle = binding.toolbar.textView3;
-        toolbarTitle.setText("نرم افزارها");
+        toolbarTitle.setText("افزودن پلن");
         toolbar = binding.toolbar.tlbMain;
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
 
+        binding.addPlanIfName.setText("نام پلن");
+        binding.addPlanIfDays.setText("تعداد روزها");
+        binding.addPlanIfMaxdevice.setText("حداکثر تعداد دستگاه متصل");
+        binding.addPlanIfDescription.setText("توضیحات");
         return binding.getRoot();
     }
 }

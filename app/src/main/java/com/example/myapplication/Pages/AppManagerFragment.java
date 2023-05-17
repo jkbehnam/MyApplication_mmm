@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Pages;
 
 import android.os.Bundle;
 
@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.example.myapplication.Models.AppDetailModel;
 import com.example.myapplication.Models.MainMenuModel;
+import com.example.myapplication.R;
 import com.example.myapplication.RcycAdapters.AppManagmentAdapter;
 import com.example.myapplication.RcycAdapters.MainMenuAdapter;
 import com.example.myapplication.databinding.FragmentAppManagerBinding;
