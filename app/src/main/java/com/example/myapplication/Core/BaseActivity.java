@@ -15,6 +15,8 @@ import io.github.inflationx.viewpump.ViewPump;
 import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 
 public class BaseActivity extends AppCompatActivity {
+    LottieDialogFragment lottieDialogFragment;
+    public static String PREFERENCE_FILE_KEY="rasis";
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(ViewPumpContextWrapper.wrap(base));
@@ -33,6 +35,13 @@ public class BaseActivity extends AppCompatActivity {
                 .build());
 
 
+    }
+    public void showProgressDialog(){
+        lottieDialogFragment=  new LottieDialogFragment().newInstance();
+        lottieDialogFragment.show(getSupportFragmentManager(),"");
+    }
+    public void DimissProgressDialog(){
+        lottieDialogFragment.dismiss();
     }
 
 }

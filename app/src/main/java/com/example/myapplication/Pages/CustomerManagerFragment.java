@@ -4,7 +4,6 @@ import android.os.Bundle;
 
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -13,12 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.myapplication.Models.AppDetailModel;
 import com.example.myapplication.Models.CustomerModel;
 import com.example.myapplication.R;
-import com.example.myapplication.RcycAdapters.AppManagmentAdapter;
 import com.example.myapplication.RcycAdapters.CustomerManagmentAdapter;
-import com.example.myapplication.databinding.FragmentAppManagerBinding;
 import com.example.myapplication.databinding.FragmentCustomerManagerBinding;
 
 import java.util.ArrayList;

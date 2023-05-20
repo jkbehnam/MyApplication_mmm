@@ -7,7 +7,7 @@ public class RetrofitClient {
 
     private static RetrofitClient instance = null;
     private Api myApi;
-    String BASE_URL = "http://192.168.2.234:7299";
+    String BASE_URL = "http://192.168.1.6:7299";
     private RetrofitClient() {
         Retrofit retrofit = new Retrofit.Builder().baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())

@@ -12,10 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.myapplication.Models.AppDetailModel;
 import com.example.myapplication.Models.PlanModel;
 import com.example.myapplication.R;
-import com.example.myapplication.RcycAdapters.AppManagmentAdapter;
 import com.example.myapplication.RcycAdapters.PlanManagmentAdapter;
 import com.example.myapplication.databinding.FragmentPlanManagerBinding;
 

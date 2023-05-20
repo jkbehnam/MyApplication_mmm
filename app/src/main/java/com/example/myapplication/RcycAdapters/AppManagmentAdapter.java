@@ -9,18 +9,18 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myapplication.Models.AppDetailModel;
+import com.example.myapplication.Models.ApiModel.ApiGetAppListModel;
 import com.example.myapplication.databinding.ItemListAppBinding;
 
 
 import java.util.List;
 
 public class AppManagmentAdapter extends RecyclerView.Adapter<AppManagmentAdapter.MyViewHolder> {
-    private final List<AppDetailModel> dataList;
+    private final List<ApiGetAppListModel> dataList;
     OnItemClickListener onItemClickListener;
     Context context;
 
-    public AppManagmentAdapter(List<AppDetailModel> dataList, OnItemClickListener onItemClickListener) {
+    public AppManagmentAdapter(List<ApiGetAppListModel> dataList, OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
         this.dataList = dataList;
     }
@@ -36,7 +36,7 @@ public class AppManagmentAdapter extends RecyclerView.Adapter<AppManagmentAdapte
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        AppDetailModel data = dataList.get(position);
+        ApiGetAppListModel data = dataList.get(position);
         holder.binding.appItemLl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,16 +59,16 @@ public class AppManagmentAdapter extends RecyclerView.Adapter<AppManagmentAdapte
             this.binding = binding;
         }
 
-        public void bind(AppDetailModel data) {
-            binding.tvAppName.setText(data.Name);
-            binding.tvAppVersion.setText(data.Version);
-            binding.tvAppReleaseDate.setText(data.releaseData);
+        public void bind(ApiGetAppListModel data) {
+            binding.tvAppName.setText(data.name);
+            binding.tvAppVersion.setText(data.version);
+            binding.tvAppReleaseDate.setText(data.getReleaseData());
 
         }
     }
 
     public interface OnItemClickListener {
-        void onItemClick(AppDetailModel item, int position);
+        void onItemClick(ApiGetAppListModel item, int position);
     }
 }
 

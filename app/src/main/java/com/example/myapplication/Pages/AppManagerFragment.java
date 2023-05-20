@@ -2,12 +2,9 @@ package com.example.myapplication.Pages;
 
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
@@ -15,14 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.myapplication.Models.AppDetailModel;
-import com.example.myapplication.Models.MainMenuModel;
+import com.example.myapplication.Models.ApiModel.ApiGetAppListModel;
+import com.example.myapplication.Pages.Presenters.AppManagerPresenter;
 import com.example.myapplication.R;
 import com.example.myapplication.RcycAdapters.AppManagmentAdapter;
-import com.example.myapplication.RcycAdapters.MainMenuAdapter;
 import com.example.myapplication.databinding.FragmentAppManagerBinding;
-import com.example.myapplication.databinding.FragmentMainBinding;
-import com.example.myapplication.databinding.ToolbarMainBinding;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +31,7 @@ public class AppManagerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentAppManagerBinding.inflate(inflater, container, false);
+        AppManagerPresenter appManagerPresenter = new AppManagerPresenter(this);
 
         toolbarTitle = binding.toolbar.textView3;
         toolbarTitle.setText("نرم افزارها");
@@ -44,29 +39,13 @@ public class AppManagerFragment extends Fragment {
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
 
 
-        List<AppDetailModel> appDetailModels = new ArrayList<>();
-        appDetailModels.add(new AppDetailModel("صندوقک", "13.1.0", "1401.2.2"));
-        appDetailModels.add(new AppDetailModel("ویژیتو", "4.2", "1402.2.2"));
-        appDetailModels.add(new AppDetailModel("سفارشگیر", "2.5", "1402.2.5"));
-        appDetailModels.add(new AppDetailModel("سفارشگیر", "2.5", "1402.2.5"));
-        appDetailModels.add(new AppDetailModel("سفارشگیر", "2.5", "1402.2.5"));
-        appDetailModels.add(new AppDetailModel("سفارشگیر", "2.5", "1402.2.5"));
-        appDetailModels.add(new AppDetailModel("سفارشگیر", "2.5", "1402.2.5"));
-        appDetailModels.add(new AppDetailModel("سفارشگیر", "2.5", "1402.2.5"));
-        appDetailModels.add(new AppDetailModel("سفارشگیر", "2.5", "1402.2.5"));
-        appDetailModels.add(new AppDetailModel("سفارشگیر", "2.5", "1402.2.5"));
-        appDetailModels.add(new AppDetailModel("سفارشگیر", "2.5", "1402.2.5"));
-        appDetailModels.add(new AppDetailModel("سفارشگیر", "2.5", "1402.2.5"));
+//        List<ApiGetAppListModel> appDetailModels = new ArrayList<>();
+//        appDetailModels.add(new ApiGetAppListModel("صندوقک", "13.1.0", 1684416642000l));
+//        appDetailModels.add(new ApiGetAppListModel("ویژیتو", "4.2", 1684416642000l));
+//        appDetailModels.add(new ApiGetAppListModel("سفارشگیر", "2.5", 1684416642000l));
 
 
-        AppManagmentAdapter appManagmentAdapter = new AppManagmentAdapter(appDetailModels, new AppManagmentAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(AppDetailModel item, int position) {
-                Navigation.findNavController(getView()).navigate(R.id.action_appManagerFragment_to_appDetailFragment);
-            }
-        });
-        binding.rclAppmanager.setLayoutManager(new LinearLayoutManager(this.getActivity()));
-        binding.rclAppmanager.setAdapter(appManagmentAdapter);
+        appManagerPresenter.getAllApps();
 
         binding.fabAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,5 +62,17 @@ public class AppManagerFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    public void updateList(List<ApiGetAppListModel> apiGetAppListModels) {
+        AppManagmentAdapter appManagmentAdapter = new AppManagmentAdapter(apiGetAppListModels, new AppManagmentAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(ApiGetAppListModel item, int position) {
+                Navigation.findNavController(getView()).navigate(R.id.action_appManagerFragment_to_appDetailFragment);
+            }
+        });
+        binding.rclAppmanager.setLayoutManager(new LinearLayoutManager(this.getActivity()));
+        binding.rclAppmanager.setAdapter(appManagmentAdapter);
+
     }
 }
